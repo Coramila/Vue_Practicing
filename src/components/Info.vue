@@ -28,11 +28,14 @@ export default{
     components: {
         Picture
     },
+    props:{
+        email: String
+    },
     data(){
         return{
             esta_trabalhando: false,
             mostrar_email: false,
-            email: 'Camila@email.com',
+
             meu_link: 'https://github.com/Coramila',
             textoBotao: 'Mostrar e-mail',
             backend_technologies:["JS","PHP","Python"],
