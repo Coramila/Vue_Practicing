@@ -8,9 +8,12 @@
             <li>PHP</li>
             <li>Phyton</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{ textoBotao }}</button>
+        </div>
 
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
-        <p>Para acessar meu portfólio <a v-bind:href="meu_link" target="blank5">clique aqui.</a></p>
+        <p class="teste">Para acessar meu portfólio <a v-bind:href="meu_link" target="blank5">clique aqui.</a></p>
         <Picture/>
     </div>
 </template>
@@ -27,8 +30,25 @@ export default{
             esta_trabalhando: false,
             mostrar_email: false,
             email: 'Camila@email.com',
-            meu_link: 'https://github.com/Coramila'
+            meu_link: 'https://github.com/Coramila',
+            textoBotao: 'Mostrar e-mail'
+        }
+    },
+    methods:{
+        showEmail (){
+            this.mostrar_email = !this.mostrar_email
+            if(!this.mostrar_email){
+                this.textoBotao = 'Mostrar e-mail'
+            }else{
+                this.textoBotao = 'Ocultar e-mail'
+            }
         }
     }
 }
 </script>
+
+<style>
+.paragrafo-pai{
+    background-color: pink;
+}
+</style>
